@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff5f8;
+    color: #755263;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 10% 20%, #ffe0ec, transparent 35%),
+        radial-gradient(circle at 90% 80%, #eadfff, transparent 35%),
+        radial-gradient(circle at 50% 50%, #fff0e9, transparent 55%),
+        #fff8fa;
+}
+
+/* ANIMASI ORNAMEN */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: rotate(-8deg);
+    }
+    50% {
+        transform: rotate(9deg);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: .35;
+        transform: scale(.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* HEADER */
+header {
+    position: relative;
+    text-align: center;
+    padding: 85px 20px 65px;
+}
+
+.subtitle {
+    color: #d58ba9;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 75px);
+    color: #c76d96;
+    font-weight: 600;
+}
+
+header h1 span {
+    font-style: italic;
+    color: #a88ac9;
+}
+
+header p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #98798b;
+}
+
+.header-decor {
+    position: absolute;
+    pointer-events: none;
+    animation: float 4s infinite ease-in-out;
+}
+
+.hd1 {
+    top: 35px;
+    left: 13%;
+    font-size: 38px;
+}
+
+.hd2 {
+    top: 100px;
+    right: 14%;
+    font-size: 27px;
+    animation-delay: 1s;
+}
+
+.hd3 {
+    bottom: 15px;
+    left: 25%;
+    font-size: 23px;
+    animation-delay: 2s;
+}
+
+.hd4 {
+    top: 25px;
+    right: 29%;
+    font-size: 19px;
+    animation: twinkle 2s infinite;
+}
+
+/* FOTO UTAMA */
+.photo-section {
+    position: relative;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.photo-frame {
+    display: inline-block;
+    position: relative;
+    padding: 12px;
+    background: white;
+    border-radius: 180px 180px 25px 25px;
+    box-shadow: 0 15px 40px #d9a9be55;
+    transform: rotate(-2deg);
+}
+
+.photo-frame img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 180px 180px 18px 18px;
+}
+
+.photo-caption {
+    margin-top: 22px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #bd7c9b;
+    font-size: 19px;
+}
+
+.photo-decor {
+    position: absolute;
+    pointer-events: none;
+}
+
+.pd1 {
+    top: 5px;
+    left: calc(50% - 155px);
+    font-size: 32px;
+    animation: sway 4s infinite;
+}
+
+.pd2 {
+    top: 65px;
+    right: calc(50% - 175px);
+    font-size: 28px;
+    animation: float 5s infinite;
+}
+
+.pd3 {
+    bottom: 30px;
+    left: calc(50% - 170px);
+    font-size: 23px;
+}
+
+.pd4 {
+    bottom: 15px;
+    right: calc(50% - 155px);
+    font-size: 20px;
+    color: #e9a2bd;
+}
+
+/* GALERI FOTO */
+.memory-section {
+    max-width: 1050px;
+    margin: 0 auto 85px;
+    padding: 0 25px;
+    text-align: center;
+    position: relative;
+}
+
+.memory-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #bd7195;
+    margin-bottom: 12px;
+}
+
+.memory-subtitle {
+    font-size: 13px;
+    color: #a88b9a;
+    margin-bottom: 35px;
+}
+
+.memory-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding-top: 12px;
+}
+
+.memory-card {
+    background: white;
+    padding: 12px 12px 18px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px #d6a8bc33;
+    transition: 0.4s;
+    position: relative;
+}
+
+.memory-card:nth-child(1) {
+    transform: rotate(-2deg);
+}
+
+.memory-card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.memory-card:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.memory-card:hover {
+    transform: translateY(-10px) rotate(0);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+/* ORNAMEN GALERI YANG BERBEDA */
+.memory-decor {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.memory-card:nth-child(1) .memory-decor {
+    top: -23px;
+    right: 8px;
+    font-size: 29px;
+    animation: sway 4s infinite;
+}
+
+.memory-card:nth-child(2) .memory-decor {
+    bottom: 15px;
+    left: -19px;
+    font-size: 27px;
+    animation: float 4s infinite;
+}
+
+.memory-card:nth-child(3) .memory-decor {
+    top: -19px;
+    left: -15px;
+    font-size: 28px;
+    animation: float 5s infinite;
+}
+
+/* JUDUL UCAPAN */
+.section-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: #bd7195;
+}
+
+.section-title p {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #a88b9a;
+}
+
+.title-decor {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 23px;
+    animation: float 3s infinite;
+}
+
+/* KARTU UCAPAN */
+.wishes {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 25px 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: #ffffffdf;
+    padding: 35px 27px;
+    border-radius: 20px;
+    border: 1px solid #f4dce7;
+    box-shadow: 0 10px 30px #d6a8bc22;
+    transition: 0.4s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px #d6a8bc44;
+}
+
+.card .icon {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #c4779b;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 2;
+    color: #917887;
+}
+
+/* ORNAMEN ACAK DI KARTU */
+.card-decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.card:nth-child(1) .decor-a {
+    top: -18px;
+    right: 20px;
+    font-size: 27px;
+    animation: float 4s infinite;
+}
+
+.card:nth-child(1) .decor-b {
+    bottom: 35px;
+    left: -13px;
+    font-size: 23px;
+}
+
+.card:nth-child(2) .decor-a {
+    top: 35px;
+    right: -17px;
+    font-size: 25px;
+    animation: float 5s infinite;
+}
+
+.card:nth-child(2) .decor-b {
+    bottom: -14px;
+    left: 35px;
+    font-size: 24px;
+}
+
+.card:nth-child(3) .decor-a {
+    top: -18px;
+    left: 25px;
+    font-size: 28px;
+    animation: sway 4s infinite;
+}
+
+.card:nth-child(3) .decor-b {
+    bottom: 35px;
+    right: -12px;
+    font-size: 24px;
+}
+
+/* FOOTER */
+footer {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f1bfd2, #d4b9eb, #f5c9d9);
+    text-align: center;
+    padding: 75px 20px;
+    color: #7d5981;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    line-height: 2;
+}
+
+footer .question {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin: 30px 0;
+    font-style: italic;
+}
+
+.copyright {
+    margin-top: 45px;
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.footer-decor {
+    position: absolute;
+    pointer-events: none;
+    animation: float 5s infinite;
+}
+
+.fd1 {
+    top: 20px;
+    left: 9%;
+    font-size: 32px;
+}
+
+.fd2 {
+    top: 55px;
+    right: 13%;
+    font-size: 27px;
+}
+
+.fd3 {
+    bottom: 30px;
+    left: 20%;
+    font-size: 23px;
+}
+
+.fd4 {
+    bottom: 20px;
+    right: 20%;
+    font-size: 30px;
+    animation-delay: 2s;
+}
+
+/* RESPONSIVE */
+@media (max-width: 750px) {
+    .wishes {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    header {
+        padding-top: 75px;
+    }
+
+    .photo-frame img {
+        width: 190px;
+        height: 250px;
+    }
+
+    .memory-gallery {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin: auto;
+        gap: 35px;
+    }
+
+    .memory-card img {
+        height: 280px;
+    }
+
+    .header-decor {
+        font-size: 23px;
+    }
+
+    .photo-decor {
+        font-size: 20px;
+    }
+
+    .card-decor {
+        font-size: 21px;
+    }
+
+    .footer-decor {
+        font-size: 22px;
+    }
+
+    .wishes {
+        padding-bottom: 75px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<!-- HEADER -->
+<header>
+
+    <span class="header-decor hd1">🦋</span>
+    <span class="header-decor hd2">🌸</span>
+    <span class="header-decor hd3">🎀</span>
+    <span class="header-decor hd4">✦</span>
+
+    <div class="subtitle">TANGGAL 18 JANUARI NIHH!!</div>
+
+    <h1>Happy <span>Birthday!</span></h1>
+
+    <p>Semoga Suka Yaa</p>
+
+</header>
+
+<!-- FOTO UTAMA -->
+<section class="photo-section">
+
+    <span class="photo-decor pd1">🌷</span>
+    <span class="photo-decor pd2">🦋</span>
+    <span class="photo-decor pd3">♡</span>
+    <span class="photo-decor pd4">✧</span>
+
+    <div class="photo-frame">
+        <img src="https://iili.io/nQBxSzg.md.png" alt="Birthday Girl">
+    </div>
+
+    <div class="photo-caption">
+        Dyah Ayu Wulansari
+    </div>
+
+</section>
+
+<!-- 3 FOTO TAMBAHAN -->
+<section class="memory-section">
+
+    <h2 class="memory-title">Little Memories </h2>
+
+    <p class="memory-subtitle">
+        Princess??
+    </p>
+
+    <div class="memory-gallery">
+
+        <div class="memory-card">
+            <span class="memory-decor">🌸</span>
+            <img src="https://iili.io/nQfSNGn.th.png" alt="Foto Kenangan 1">
+        </div>
+
+        <div class="memory-card">
+            <span class="memory-decor">🦋</span>
+            <img src="https://iili.io/nQfiDfS.th.png" alt="Foto Kenangan 2">
+        </div>
+
+        <div class="memory-card">
+            <span class="memory-decor">🎀</span>
+            <img src="https://iili.io/nQftEaS.md.png" alt="Foto Kenangan 3">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- UCAPAN -->
+<div class="section-title">
+
+    <span class="title-decor">🌸</span>
+    <h2>Selamat Membaca Kakk🙏🏻😇</h2>
+    <p>Jadi Gini...</p>
+
+</div>
+
+<section class="wishes">
+
+    <!-- UCAPAN 1 -->
+    <div class="card">
+
+        <span class="card-decor decor-a">🎀</span>
+        <span class="card-decor decor-b">🌼</span>
+
+        <div class="icon">🎀</div>
+
+        <h3>Happy Bhirtday</h3>
+
+        <p contenteditable="true">
+            Selamat ulang tahun yaa.
+            Semoga panjang umur, sehat selalu, dikabulkan whishlistnya, dan juga semoga selalu ada kebahagiaan, hal baik, dan orang-orang baik juga disekitarmu aminnnn.
+        </p>
+
+    </div>
+
+    <!-- UCAPAN 2 -->
+    <div class="card">
+
+        <span class="card-decor decor-a">🦋</span>
+        <span class="card-decor decor-b">💗</span>
+
+        <div class="icon">🌷</div>
+
+        <h3>Hmmm</h3>
+
+        <p contenteditable="true">
+            halo kaks, jujur Yaa sebener e aku ga wani ngene iki, soale aku yaa sadar diri🥸, tapi aku yaa pengan confes😎, jadi jujur🥶 aku suka sama kmu.. (suka, seneng, ngefans, Kabeh ikulah pokok e), nk amu takok kok bisa suka??, jadi ceritanya aku seneng amu dari awal masuk X2 Sampai sekarang, yaa emang keliatan e dilut sii... amu iku menurutku apikan, lucu, ga aneh", baik, pinter, duwur, paket lengkap, bukane melebih lebihkan Yoo tapi aku emang seneng sifatmu, perilakumu, awakmu, pola pikirmu, semua😇. Pie yaa paling wkmu Yo ngeh pas awal pilketos Sampek beberapa Iki kadang aku noleh nk amu sekilas, sering chat amu, iku karna aku tenan ngefans amu 😀 (kan amu pernah omong "ngefans ta?" iyo bener aku ngefans emang), mungkin amu Yaa risih ndelok aku ngunu, sering ngechat, kadang megelne... aku yaa ga berharap banyak buat amu ngasih feedback nk aku sii (ga mau maksa, tapi kalo diterima juga boleh hehe), aku confes wes tenang kok, tapi semisal amu ga keberatan + mau jalanin dulu boleh (bukan bermaksud nyoba nyoba btw, aku serius loh iki) atau mungkin pengen aku ngerubah sesuatu yaa bolehh, jujur aku yaa pengen berubah sii kayak fokus belajar, pengen ngurangi game (fokus rl), pengen perbanyak olahraga barang Ben bisa ideal, wess wess kakean 😭to the point langsung, amu gelem kah pacaran?? nk ga gelem gapapa sii aku ga maksa, tapi pls semisal amu jijik/ga seneng Karo pesan Iki (menolak) Ojo seleb, tetep temenan ae kayak biasa lagian adewe juga 1 kelas pasti kan ada yang namane kelompokan mosok musuhan... 🙂
+        </p>
+
+    </div>
+
+    <!-- UCAPAN 3 -->
+    <div class="card">
+
+        <span class="card-decor decor-a">🌸</span>
+        <span class="card-decor decor-b">✨</span>
+
+        <div class="icon">💌</div>
+
+        <h3>Lastt</h3>
+
+        <p contenteditable="true">
+            hmm seng terakhir apa yaa🤔, ohh yaa jangan lupa apa ae jawaban mu chat en aku ben aku tau jawaban ee😭😭, btw iku aku buat web sendiri sebisa ku hehe (manual coding), kata katane juga dari ideku Kabeh buatan ku lah, apa neh yaa, ohh yaa aku ada sesuatu semisal amu engga keberatan aku ada project gantungan kunci selamat ulang tahun kalo berhasil nanti tak kasih nk amu😀 yaa moga aja berhasil, sekalii lagii Selamatt Ulang tahun yaa Dyah!! :)
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <span class="footer-decor fd1">🌸</span>
+    <span class="footer-decor fd2">🦋</span>
+    <span class="footer-decor fd3">💗</span>
+    <span class="footer-decor fd4">🌷</span>
+
+    <h2>LASSTTT PART 2</h2>
+
+    <p>
+        APA LAGI YAH OTAKKU LOADING
+    </p>
+
+    <div class="question">
+        Ohh iyaa... Semangat yaa sekolahnya, Sorry ngerepotin sama bikin risih...
+    </div>
+
+    <p>
+        Semoga Kamu ga kecewa sama yang dibikin ini :b
+    </p>
+
+    <br>
+
+    <p>
+        MAKASIHH UDAH BACA SAMPEK BAWAH
+    </p>
+
+    <div class="copyright">
+        "From raff:b, Kamis 5 November 2026"
+    </div>
+
+</footer>
+
+</body>
+</html>
